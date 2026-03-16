@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangalam 2026 - Shark Tank Event</title>
-    <meta name="description" content="Register your startup idea for the Mangalam 2026 Shark Tank Event.">
+    <title>Mangalam 2026 - Shark Tank Startup Pitch Competition</title>
+    <meta name="description" content="Pitch Your Idea. Impress the Sharks. Turn Innovation into Opportunity at the Mangalam 2026 Event.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="intro.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <!-- Animated Background -->
+    <!-- Animated Background from style.css -->
     <div class="background-animation">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -21,206 +22,313 @@
         <div class="grid-overlay"></div>
     </div>
 
-    <div class="container">
-        <!-- Header -->
-        <header class="form-header">
-            <div class="badge">Mangalam 2026</div>
-            <h1 class="glitch-text" data-text="SHARK TANK">SHARK TANK</h1>
-            <p class="subtitle">Pitch Your Vision. Secure Your Future.</p>
-        </header>
-
-        <!-- Form Card -->
-        <div class="form-card glass-panel">
-            <form id="sharkTankForm" novalidate>
-                
-                <!-- Section 1: Team Leader -->
-                <section class="form-section active" id="section-1">
-                    <div class="section-header">
-                        <i data-lucide="user-circle" class="section-icon"></i>
-                        <h2>Team Leader Details</h2>
-                        <p>Primary contact for all communications</p>
-                    </div>
-                    
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="leaderName" required placeholder=" ">
-                            <label for="leaderName">Full Name</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
-                        <div class="input-field">
-                            <input type="email" id="leaderEmail" required placeholder=" ">
-                            <label for="leaderEmail">Email Address</label>
-                            <span class="focus-border"></span>
-                        </div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="tel" id="leaderPhone" required placeholder=" ">
-                            <label for="leaderPhone">Phone Number</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
-                        <div class="input-field">
-                            <input type="text" id="leaderOrg" required value="MGM College" readonly placeholder=" ">
-                            <label for="leaderOrg">College / Organization</label>
-                            <span class="focus-border"></span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 2: Team Details -->
-                <section class="form-section collapsed" id="section-2">
-                    <div class="section-header">
-                        <i data-lucide="users" class="section-icon"></i>
-                        <h2>Team Details</h2>
-                        <p>Tell us about the people behind the idea</p>
-                    </div>
-                    
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="teamName" required placeholder=" ">
-                            <label for="teamName">Team Name</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
-                        <div class="input-field select-wrapper">
-                            <select id="teamSize" required>
-                                <option value="" disabled selected>Select Team Size</option>
-                                <option value="2">2 Members</option>
-                                <option value="4">4 Members</option>
-                            </select>
-                            <i data-lucide="chevron-down" class="select-icon"></i>
-                            <label for="teamSize" class="select-label">Number of Members</label>
-                            <span class="focus-border"></span>
-                        </div>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <textarea id="memberNames" rows="3" required placeholder=" "></textarea>
-                        <label for="memberNames">Member Names (Comma separated)</label>
-                        <span class="focus-border"></span>
-                    </div>
-                </section>
-
-                <!-- Section 3: Startup / Idea Details -->
-                <section class="form-section collapsed" id="section-3">
-                    <div class="section-header">
-                        <i data-lucide="lightbulb" class="section-icon"></i>
-                        <h2>Startup / Idea Details</h2>
-                        <p>What are you building?</p>
-                    </div>
-                    
-                    <div class="input-field full-width">
-                        <input type="text" id="startupName" required placeholder=" ">
-                        <label for="startupName">Startup / Idea Name</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <textarea id="problemStatement" rows="3" required placeholder=" "></textarea>
-                        <label for="problemStatement">Problem Statement</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <textarea id="proposedSolution" rows="3" required placeholder=" "></textarea>
-                        <label for="proposedSolution">Proposed Solution</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="targetMarket" required placeholder=" ">
-                            <label for="targetMarket">Target Market</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
-                        <div class="input-field select-wrapper">
-                            <select id="estimatedBudget" required>
-                                <option value="" disabled selected>Select Budget Range</option>
-                                <option value="< $10k">Under $10k</option>
-                                <option value="$10k - $50k">$10k - $50k</option>
-                                <option value="$50k - $100k">$50k - $100k</option>
-                                <option value="$100k+">$100k+</option>
-                            </select>
-                            <i data-lucide="chevron-down" class="select-icon"></i>
-                            <label for="estimatedBudget" class="select-label">Estimated Budget</label>
-                            <span class="focus-border"></span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 4: Document Uploads -->
-                <section class="form-section collapsed" id="section-4">
-                    <div class="section-header">
-                        <i data-lucide="folder-up" class="section-icon"></i>
-                        <h2>Attachments</h2>
-                        <p>Upload your pitch deck and optional assets</p>
-                    </div>
-
-                    <div class="upload-area" id="pitchDeckUpload">
-                        <input type="file" id="pitchDeck" accept=".pdf,.ppt,.pptx" required hidden>
-                        <div class="upload-content">
-                            <i data-lucide="cloud-upload" class="upload-icon"></i>
-                            <h3>Upload Pitch Deck</h3>
-                            <p>PDF or PPT (Max 20MB)</p>
-                            <span class="file-name"></span>
-                        </div>
-                    </div>
-
-                    <div class="upload-area optional" id="prototypeUpload">
-                        <input type="file" id="prototypeImages" accept="image/*" multiple hidden>
-                        <div class="upload-content">
-                            <i data-lucide="image" class="upload-icon"></i>
-                            <h3>Prototype Images <span class="badge-optional">Optional</span></h3>
-                            <p>JPEG, PNG (Max 5MB per image)</p>
-                            <span class="file-name"></span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 5: Declaration -->
-                <section class="form-section declaration-section collapsed" id="section-5">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" id="declaration" required>
-                        <span class="checkmark">
-                            <i data-lucide="check" class="check-icon"></i>
-                        </span>
-                        <span class="checkbox-text">I confirm that this idea is original and created by our team. I understand the rules of the Mangalam 2026 Shark Tank Event.</span>
-                    </label>
-                </section>
-
-                <!-- Form Controls -->
-                <div class="form-actions">
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" id="formProgress"></div>
-                    </div>
-                    <p class="progress-text"><span id="completedSections">1</span>/5 Sections Completed</p>
-                    
-                    <button type="submit" class="submit-btn disabled" id="submitBtn">
-                        <span class="btn-text">Submit Pitch</span>
-                        <i data-lucide="rocket" class="btn-icon"></i>
-                        <div class="btn-glow"></div>
-                    </button>
-                </div>
-
-            </form>
-            
-            <!-- Success State -->
-            <div id="successState" class="success-state hidden">
-                <div class="success-icon-container">
-                    <i data-lucide="check-circle" class="success-icon-large"></i>
-                </div>
-                <h2>Pitch Submitted!</h2>
-                <p>Welcome to the Tank. We will review your application and get back to you soon.</p>
-                <button class="outline-btn" onclick="window.location.reload()">Submit Another</button>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <div class="badge fade-in-up">Mangalam 2026</div>
+            <h1 class="glitch-text text-huge fade-in-up" data-text="SHARK TANK">SHARK TANK</h1>
+            <h2 class="hero-subtitle text-gradient fade-in-up">Startup Pitch Competition</h2>
+            <p class="hero-tagline fade-in-up">"Pitch Your Idea. Impress the Sharks. Turn Innovation into Opportunity."</p>
+            <div class="hero-actions fade-in-up">
+                <a href="register.html" class="submit-btn inline-btn">
+                    <span class="btn-text">Register Now</span>
+                    <i data-lucide="arrow-right" class="btn-icon"></i>
+                    <div class="btn-glow"></div>
+                </a>
             </div>
-            
         </div>
+    </section>
+
+    <!-- Main Content Wrapper with Glass Panels -->
+    <div class="container wide-container">
+        
+        <!-- About the Event -->
+        <section class="info-section glass-panel reveal">
+            <div class="section-header">
+                <i data-lucide="info" class="section-icon"></i>
+                <h2>About the Event</h2>
+            </div>
+            <div class="content-text">
+                <p>The Shark Tank Event at Mangalam 2026 is a premier platform for innovative thinkers and aspiring entrepreneurs to present their startup ideas before a distinguished panel of judges (the Sharks).</p>
+                <p>Participants will have the unique opportunity to pitch their concepts, explain their business models, and convince the investors why their idea deserves funding, incubation, and recognition.</p>
+                
+                <h3 class="subsection-title">Purpose of the Event</h3>
+                <ul class="feature-list">
+                    <li><i data-lucide="rocket"></i> Encourage entrepreneurship and leadership among students.</li>
+                    <li><i data-lucide="lightbulb"></i> Promote innovative and sustainable solutions to real-world problems.</li>
+                    <li><i data-lucide="presentation"></i> Give students a high-profile platform to showcase ideas and gain mentorship.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Who Can Participate -->
+        <section class="info-section glass-panel reveal">
+            <div class="section-header">
+                <i data-lucide="users" class="section-icon"></i>
+                <h2>Who Can Participate</h2>
+            </div>
+            <div class="grid-3-col">
+                <div class="card-feature">
+                    <i data-lucide="graduation-cap"></i>
+                    <h4>MGM College Exclusive</h4>
+                    <p>Participation is open strictly to students of MGM College.</p>
+                </div>
+                <div class="card-feature">
+                    <i data-lucide="user-plus"></i>
+                    <h4>2 or 4 Members</h4>
+                    <p>Teams must consist of exactly 2 or 4 members.</p>
+                </div>
+                <div class="card-feature">
+                    <i data-lucide="sparkles"></i>
+                    <h4>Originality Required</h4>
+                    <p>Participants must present a completely original idea or startup concept.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Format -->
+        <section class="info-section glass-panel reveal">
+            <div class="section-header">
+                <i data-lucide="git-merge" class="section-icon"></i>
+                <h2>Event Format</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <h3>Round 1 – Idea Submission</h3>
+                        <p>Teams submit their Startup idea, Problem statement, and Business concept online through the registration portal.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h3>Round 2 – Shortlisting</h3>
+                        <p>The most promising ideas are carefully evaluated and selected by our preliminary screening committee.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <h3>Round 3 – Final Pitch</h3>
+                        <p>Shortlisted teams present their idea live on stage in front of the Sharks.</p>
+                        <ul class="feature-list mt-1">
+                            <li><i data-lucide="clock"></i> <strong>5 Minute Presentation:</strong> Pitch your vision clearly.</li>
+                            <li><i data-lucide="message-circle-question"></i> <strong>3 Minute Q&A:</strong> Answer questions from the judging panel.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules & Judging Grid -->
+        <div class="grid-2-col layout-gap stretch-items">
+            <!-- Rules -->
+            <section class="info-section glass-panel reveal mb-0">
+                <div class="section-header">
+                    <i data-lucide="scale" class="section-icon"></i>
+                    <h2>Rules & Guidelines</h2>
+                </div>
+                <ul class="rules-list">
+                    <li><i data-lucide="check-circle-2"></i> Ideas must be absolutely original and innovative.</li>
+                    <li><i data-lucide="check-circle-2"></i> Teams must register before the strict deadline.</li>
+                    <li><i data-lucide="check-circle-2"></i> Teams must strictly consist of 2 or 4 members.</li>
+                    <li><i data-lucide="check-circle-2"></i> Pitch presentation should not exceed 5 minutes.</li>
+                    <li><i data-lucide="check-circle-2"></i> Participants must bring their presentation (PPT/PDF).</li>
+                    <li><i data-lucide="alert-triangle" class="text-error"></i> Plagiarized ideas lead to instant disqualification.</li>
+                    <li><i data-lucide="gavel"></i> Judges’ decision will be final and binding.</li>
+                </ul>
+            </section>
+
+            <!-- Judging -->
+            <section class="info-section glass-panel reveal mb-0">
+                <div class="section-header">
+                    <i data-lucide="microscope" class="section-icon"></i>
+                    <h2>Judging Criteria</h2>
+                </div>
+                <div class="criteria-list">
+                    <div class="criteria-item">
+                        <div class="criteria-header">
+                            <span>Innovation & Originality</span>
+                            <span class="criteria-score">25%</span>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar" style="width: 25%"></div></div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-header">
+                            <span>Feasibility of Idea</span>
+                            <span class="criteria-score">20%</span>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar" style="width: 20%"></div></div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-header">
+                            <span>Market Potential</span>
+                            <span class="criteria-score">20%</span>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar" style="width: 20%"></div></div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-header">
+                            <span>Business Model Robustness</span>
+                            <span class="criteria-score">15%</span>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar" style="width: 15%"></div></div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-header">
+                            <span>Quality of Presentation</span>
+                            <span class="criteria-score">10%</span>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar" style="width: 10%"></div></div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-header">
+                            <span>Q&A Handling</span>
+                            <span class="criteria-score">10%</span>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar" style="width: 10%"></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Prizes -->
+        <section class="info-section glass-panel reveal text-center mt-gap">
+            <div class="section-header center-align">
+                <i data-lucide="trophy" class="section-icon"></i>
+                <h2>Prizes & Rewards</h2>
+            </div>
+            <div class="prizes-grid">
+                <div class="prize-card silver">
+                    <div class="prize-icon">🥈</div>
+                    <h3>Runner Up</h3>
+                    <p>Prize + Certificate of Excellence</p>
+                </div>
+                <div class="prize-card gold">
+                    <div class="prize-icon">🏆</div>
+                    <h3>Winner</h3>
+                    <p>Cash Prize + Winner's Certificate</p>
+                    <div class="glow-effect"></div>
+                </div>
+                <div class="prize-card bronze">
+                    <div class="prize-icon">🎖</div>
+                    <h3>Finalists</h3>
+                    <p>Participation Certificates for all finalists</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information & Contact Grid -->
+        <div class="grid-2-col layout-gap mt-gap stretch-items">
+            <!-- Info -->
+            <section class="info-section glass-panel reveal mb-0">
+                <div class="section-header">
+                    <i data-lucide="calendar-days" class="section-icon"></i>
+                    <h2>Important Info</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i data-lucide="calendar"></i>
+                        <div>
+                            <span class="info-label">Event Date</span>
+                            <span class="info-value">TBA (Stay Tuned)</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <span class="info-label">Venue</span>
+                            <span class="info-value">Main Campus Auditorium</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="users"></i>
+                        <div>
+                            <span class="info-label">Team Size</span>
+                            <span class="info-value">2 or 4 Members</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock"></i>
+                        <div>
+                            <span class="info-label">Deadline</span>
+                            <span class="info-value">March 25, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="info-section glass-panel reveal mb-0">
+                <div class="section-header">
+                    <i data-lucide="phone-call" class="section-icon"></i>
+                    <h2>Contact Us</h2>
+                </div>
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">For any queries regarding the event format, eligibility, or rules, please reach out to our team:</p>
+                
+                <div class="contact-card">
+                    <div class="contact-avatar"><i data-lucide="user"></i></div>
+                    <div class="contact-details">
+                        <h4>Event Coordinator</h4>
+                        <a href="tel:+918805628105"><i data-lucide="phone" class="small-icon"></i> +91 8805628105</a>
+                        <a href="mailto:parassawal2810@gmail.com"><i data-lucide="mail" class="small-icon"></i> parassawal2810@gmail.com</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="cta-section text-center reveal">
+            <h2 class="text-huge glitch-text" data-text="Ready to Dive In?">Ready to Dive In?</h2>
+            <p class="subtitle" style="margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">The Sharks are waiting. Prepare your pitch deck, assemble your team, and don't miss your chance to secure your future.</p>
+            <a href="register.html" class="submit-btn inline-btn cta-btn">
+                <span class="btn-text">Register for Shark Tank Event</span>
+                <i data-lucide="rocket" class="btn-icon"></i>
+                <div class="btn-glow"></div>
+            </a>
+        </section>
+
     </div>
 
-    <script src="script.js"></script>
+    <!-- Intro Script for scroll animations and interactions -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation Logic
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 120; // Trigger threshold
+
+            reveals.forEach(reveal => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        
+        // Trigger reveal check once on load after a slight delay
+        setTimeout(checkReveal, 200);
+        
+        // Button glow effect sync
+        document.querySelectorAll('.submit-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const glow = btn.querySelector('.btn-glow');
+                if(!glow) return;
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - 25;
+                const y = e.clientY - rect.top - 25;
+                
+                glow.style.left = `${x}px`;
+                glow.style.top = `${y}px`;
+            });
+        });
+    </script>
 </body>
 </html>
