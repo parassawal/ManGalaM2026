@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangalam 2026 - Poster & Paper Event</title>
-    <meta name="description" content="Register your startup idea for the Mangalam 2026 Poster & Paper Event.">
-    <!-- Google Fonts -->
+    <title>Mangalam 2026 - Poster & Paper Registration</title>
+    <meta name="description" content="Register your topic for the Poster & Paper event.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="background-animation">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -25,170 +23,132 @@
         <!-- Header -->
         <header class="form-header">
             <div class="badge">Mangalam 2026</div>
-            <h1 class="glitch-text" data-text="POSTER & PAPER">POSTER & PAPER</h1>
-            <p class="subtitle">Pitch Your Vision. Secure Your Future.</p>
+            <h1 class="glitch-text" data-text="Poster & Paper">Poster & Paper</h1>
+            <p class="subtitle">Register your research or project topic.</p>
         </header>
 
         <!-- Form Card -->
         <div class="form-card glass-panel">
             <form id="sharkTankForm" novalidate>
+                <input type="hidden" id="eventName" value="Poster & Paper">
                 
-                <!-- Section 1: Team Leader -->
+                <!-- Section 1: Personal Details -->
                 <section class="form-section active" id="section-1">
                     <div class="section-header">
-                        <i data-lucide="user-circle" class="section-icon"></i>
-                        <h2>Team Leader Details</h2>
-                        <p>Primary contact for all communications</p>
+                        <i data-lucide="user" class="section-icon"></i>
+                        <h2>Primary Author Details</h2>
+                        <p>Information for the main presenter</p>
                     </div>
                     
+                    <div class="input-field full-width">
+                        <input type="text" id="leaderName" required placeholder=" ">
+                        <label for="leaderName">Full Name</label>
+                        <span class="focus-border"></span>
+                    </div>
+
                     <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="leaderName" required placeholder=" ">
-                            <label for="leaderName">Full Name</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
                         <div class="input-field">
                             <input type="email" id="leaderEmail" required placeholder=" ">
-                            <label for="leaderEmail">Email Address</label>
+                            <label for="leaderEmail">E-mail</label>
                             <span class="focus-border"></span>
                         </div>
-                    </div>
-                    
-                    <div class="input-group">
                         <div class="input-field">
                             <input type="tel" id="leaderPhone" required placeholder=" ">
-                            <label for="leaderPhone">Phone Number</label>
+                            <label for="leaderPhone">Mobile no.</label>
                             <span class="focus-border"></span>
                         </div>
-                        
-                        <div class="input-field">
-                            <input type="text" id="leaderOrg" required value="MGM College" readonly placeholder=" ">
-                            <label for="leaderOrg">College / Organization</label>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-field select-wrapper">
+                            <select id="branch" required>
+                                <option value="" disabled selected>Select Branch</option>
+                                <option value="Computer">Computer</option>
+                                <option value="IT">IT</option>
+                                <option value="EXTC">EXTC</option>
+                                <option value="Chemical">Chemical</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Electrical">Electrical</option>
+                                <option value="AIML">AIML</option>
+                                <option value="DS">DS</option>
+                                <option value="Automation and Robotics">Automation and Robotics</option>
+                                <option value="Biomedical">Biomedical</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-icon"></i>
+                            <label for="branch" class="select-label">Branch</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="input-field select-wrapper">
+                            <select id="academicYear" required>
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="FE">First Year (FE)</option>
+                                <option value="SE">Second Year (SE)</option>
+                                <option value="TE">Third Year (TE)</option>
+                                <option value="BE">Final Year (BE)</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-icon"></i>
+                            <label for="academicYear" class="select-label">Year of Study</label>
                             <span class="focus-border"></span>
                         </div>
                     </div>
                 </section>
 
-                <!-- Section 2: Team Details -->
+                <!-- Section 2: Event Details -->
                 <section class="form-section collapsed" id="section-2">
                     <div class="section-header">
-                        <i data-lucide="users" class="section-icon"></i>
-                        <h2>Team Details</h2>
-                        <p>Tell us about the people behind the idea</p>
+                        <i data-lucide="file-text" class="section-icon"></i>
+                        <h2>Presentation Details</h2>
+                        <p>What are you presenting?</p>
                     </div>
                     
                     <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="teamName" required placeholder=" ">
-                            <label for="teamName">Team Name</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
                         <div class="input-field select-wrapper">
-                            <select id="teamSize" required>
-                                <option value="" disabled selected>Select Team Size</option>
-                                <option value="2">2 Members</option>
-                                <option value="4">4 Members</option>
+                            <select id="participationType" required>
+                                <option value="" disabled selected>Select Participation Type</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Group">Group</option>
                             </select>
                             <i data-lucide="chevron-down" class="select-icon"></i>
-                            <label for="teamSize" class="select-label">Number of Members</label>
+                            <label for="participationType" class="select-label">Individual or Group?</label>
                             <span class="focus-border"></span>
                         </div>
-                    </div>
 
-                    <div class="input-field full-width">
-                        <textarea id="memberNames" rows="3" required placeholder=" "></textarea>
-                        <label for="memberNames">Member Names (Comma separated)</label>
-                        <span class="focus-border"></span>
-                    </div>
-                </section>
-
-                <!-- Section 3: Startup / Idea Details -->
-                <section class="form-section collapsed" id="section-3">
-                    <div class="section-header">
-                        <i data-lucide="lightbulb" class="section-icon"></i>
-                        <h2>Startup / Idea Details</h2>
-                        <p>What are you building?</p>
-                    </div>
-                    
-                    <div class="input-field full-width">
-                        <input type="text" id="startupName" required placeholder=" ">
-                        <label for="startupName">Startup / Idea Name</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <textarea id="problemStatement" rows="3" required placeholder=" "></textarea>
-                        <label for="problemStatement">Problem Statement</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <textarea id="proposedSolution" rows="3" required placeholder=" "></textarea>
-                        <label for="proposedSolution">Proposed Solution</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="targetMarket" required placeholder=" ">
-                            <label for="targetMarket">Target Market</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
                         <div class="input-field select-wrapper">
-                            <select id="estimatedBudget" required>
-                                <option value="" disabled selected>Select Budget Range</option>
-                                <option value="< $10k">Under $10k</option>
-                                <option value="$10k - $50k">$10k - $50k</option>
-                                <option value="$50k - $100k">$50k - $100k</option>
-                                <option value="$100k+">$100k+</option>
+                            <select id="eventCategory" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="Poster Presentation">Poster Presentation</option>
+                                <option value="Paper Presentation">Paper Presentation</option>
+                                <option value="Both">Both</option>
                             </select>
                             <i data-lucide="chevron-down" class="select-icon"></i>
-                            <label for="estimatedBudget" class="select-label">Estimated Budget</label>
+                            <label for="eventCategory" class="select-label">Event Category</label>
                             <span class="focus-border"></span>
                         </div>
                     </div>
-                </section>
 
-                <!-- Section 4: Document Uploads -->
-                <section class="form-section collapsed" id="section-4">
-                    <div class="section-header">
-                        <i data-lucide="folder-up" class="section-icon"></i>
-                        <h2>Attachments</h2>
-                        <p>Upload your pitch deck and optional assets</p>
+                    <div class="input-field full-width">
+                        <input type="text" id="groupMembers" placeholder=" ">
+                        <label for="groupMembers">If Group, specify names of students in your group (Max 2 co-authors)</label>
+                        <span class="focus-border"></span>
+                        <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Leave blank if individual</p>
                     </div>
 
-                    <div class="upload-area" id="pitchDeckUpload">
-                        <input type="file" id="pitchDeck" accept=".pdf,.ppt,.pptx" required hidden>
-                        <div class="upload-content">
-                            <i data-lucide="cloud-upload" class="upload-icon"></i>
-                            <h3>Upload Pitch Deck</h3>
-                            <p>PDF or PPT (Max 20MB)</p>
-                            <span class="file-name"></span>
-                        </div>
-                    </div>
-
-                    <div class="upload-area optional" id="prototypeUpload">
-                        <input type="file" id="prototypeImages" accept="image/*" multiple hidden>
-                        <div class="upload-content">
-                            <i data-lucide="image" class="upload-icon"></i>
-                            <h3>Prototype Images <span class="badge-optional">Optional</span></h3>
-                            <p>JPEG, PNG (Max 5MB per image)</p>
-                            <span class="file-name"></span>
-                        </div>
+                    <div class="input-field full-width">
+                        <textarea id="topicName" rows="2" required placeholder=" "></textarea>
+                        <label for="topicName">Topic Name</label>
+                        <span class="focus-border"></span>
                     </div>
                 </section>
 
-                <!-- Section 5: Declaration -->
-                <section class="form-section declaration-section collapsed" id="section-5">
+                <!-- Section 3: Declaration -->
+                <section class="form-section declaration-section collapsed" id="section-3">
                     <label class="custom-checkbox">
                         <input type="checkbox" id="declaration" required>
                         <span class="checkmark">
                             <i data-lucide="check" class="check-icon"></i>
                         </span>
-                        <span class="checkbox-text">I confirm that this idea is original and created by our team. I understand the rules of the Mangalam 2026 Poster & Paper Event.</span>
+                        <span class="checkbox-text">I confirm that all information provided is accurate and my presentation content does not violate any plagiarism rules.</span>
                     </label>
                 </section>
 
@@ -197,14 +157,17 @@
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="formProgress"></div>
                     </div>
-                    <p class="progress-text"><span id="completedSections">1</span>/5 Sections Completed</p>
+                    <p class="progress-text"><span id="completedSections">1</span>/3 Sections Completed</p>
                     
                     <button type="submit" class="submit-btn disabled" id="submitBtn">
-                        <span class="btn-text">Submit Pitch</span>
-                        <i data-lucide="rocket" class="btn-icon"></i>
+                        <span class="btn-text">Submit Registration</span>
+                        <i data-lucide="send" class="btn-icon"></i>
                         <div class="btn-glow"></div>
                     </button>
                 </div>
+                
+                <!-- Hidden inputs to bypass script checks for generic forms lacking uploads -->
+                <input type="file" id="prototypeImages" hidden>
 
             </form>
             
@@ -213,9 +176,9 @@
                 <div class="success-icon-container">
                     <i data-lucide="check-circle" class="success-icon-large"></i>
                 </div>
-                <h2>Pitch Submitted!</h2>
-                <p>Welcome to the Tank. We will review your application and get back to you soon.</p>
-                <button class="outline-btn" onclick="window.location.reload()">Submit Another</button>
+                <h2>Registration Successful!</h2>
+                <p>Prepare your presentation. We will contact you with the exact schedule soon.</p>
+                <button class="outline-btn" onclick="window.location.reload()">Register Another Topic</button>
             </div>
             
         </div>
