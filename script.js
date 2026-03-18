@@ -129,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // File Upload Handlers
     function setupFileUpload(uploadArea, fileInput) {
+        if (!uploadArea || !fileInput) return; // Robustness check for forms without uploads
+
         uploadArea.addEventListener('click', () => {
             fileInput.click();
         });
@@ -227,30 +229,34 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.style.pointerEvents = 'none';
 
             try {
+                // Robust payload generator for dynamic forms
+                const safeVal = (id) => document.getElementById(id) ? document.getElementById(id).value : "N/A";
+
                 // Prepare Payload
                 const payload = {
-                    leaderName: document.getElementById('leaderName').value,
-                    leaderEmail: document.getElementById('leaderEmail').value,
-                    leaderPhone: document.getElementById('leaderPhone').value,
-                    leaderOrg: document.getElementById('leaderOrg').value,
-                    teamName: document.getElementById('teamName').value,
-                    teamSize: document.getElementById('teamSize').value,
-                    memberNames: document.getElementById('memberNames').value,
-                    startupName: document.getElementById('startupName').value,
-                    problemStatement: document.getElementById('problemStatement').value,
-                    proposedSolution: document.getElementById('proposedSolution').value,
-                    targetMarket: document.getElementById('targetMarket').value,
-                    estimatedBudget: document.getElementById('estimatedBudget').value,
+                    leaderName: safeVal('leaderName'),
+                    leaderEmail: safeVal('leaderEmail'),
+                    leaderPhone: safeVal('leaderPhone'),
+                    leaderOrg: safeVal('leaderOrg'),
+                    teamName: safeVal('teamName'),
+                    teamSize: safeVal('teamSize'),
+                    memberNames: safeVal('memberNames'),
+                    startupName: safeVal('startupName'),
+                    problemStatement: safeVal('problemStatement'),
+                    proposedSolution: safeVal('proposedSolution'),
+                    targetMarket: safeVal('targetMarket'),
+                    estimatedBudget: safeVal('estimatedBudget'),
+                    committeePreference: safeVal('committeePreference') // Added for MUN
                 };
 
-                // Add Pitch Deck (Single File)
-                if (pitchDeckInput.files.length > 0) {
+                // Add Document Uploads if they exist in the DOM
+                if (pitchDeckInput && pitchDeckInput.files.length > 0) {
                     payload.pitchDeck = await getBase64(pitchDeckInput.files[0]);
                 }
 
-                // Add Prototypes (Multiple Files)
+                // Add Prototypes (Multiple Files) if it exists
                 payload.prototypes = [];
-                if (prototypeInput.files.length > 0) {
+                if (prototypeInput && prototypeInput.files.length > 0) {
                     for (let i = 0; i < prototypeInput.files.length; i++) {
                         payload.prototypes.push(await getBase64(prototypeInput.files[i]));
                     }
