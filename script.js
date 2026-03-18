@@ -229,25 +229,18 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.style.pointerEvents = 'none';
 
             try {
-                // Robust payload generator for dynamic forms
-                const safeVal = (id) => document.getElementById(id) ? document.getElementById(id).value : "N/A";
-
-                // Prepare Payload
-                const payload = {
-                    leaderName: safeVal('leaderName'),
-                    leaderEmail: safeVal('leaderEmail'),
-                    leaderPhone: safeVal('leaderPhone'),
-                    leaderOrg: safeVal('leaderOrg'),
-                    teamName: safeVal('teamName'),
-                    teamSize: safeVal('teamSize'),
-                    memberNames: safeVal('memberNames'),
-                    startupName: safeVal('startupName'),
-                    problemStatement: safeVal('problemStatement'),
-                    proposedSolution: safeVal('proposedSolution'),
-                    targetMarket: safeVal('targetMarket'),
-                    estimatedBudget: safeVal('estimatedBudget'),
-                    committeePreference: safeVal('committeePreference') // Added for MUN
-                };
+                // Robust payload generator for completely dynamic forms
+                const payload = {};
+                
+                // Always grab eventName explicitly
+                payload.eventName = document.getElementById('eventName') ? document.getElementById('eventName').value : "General Registrations";
+                
+                // Automatically scoop up every input field by its HTML ID
+                inputs.forEach(input => {
+                    if (input.type !== 'file' && input.type !== 'checkbox' && input.id && input.id !== 'eventName') {
+                        payload[input.id] = input.value;
+                    }
+                });
 
                 // Add Document Uploads if they exist in the DOM
                 if (pitchDeckInput && pitchDeckInput.files.length > 0) {

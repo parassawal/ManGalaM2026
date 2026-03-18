@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangalam 2026 - Hackathon Event</title>
-    <meta name="description" content="Register your startup idea for the Mangalam 2026 Hackathon Event.">
-    <!-- Google Fonts -->
+    <title>Mangalam 2026 - Hackathon Registration</title>
+    <meta name="description" content="Register your team for the 24-Hour Hackathon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="background-animation">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -25,13 +23,14 @@
         <!-- Header -->
         <header class="form-header">
             <div class="badge">Mangalam 2026</div>
-            <h1 class="glitch-text" data-text="HACKATHON">HACKATHON</h1>
-            <p class="subtitle">Pitch Your Vision. Secure Your Future.</p>
+            <h1 class="glitch-text" data-text="Hackathon">Hackathon</h1>
+            <p class="subtitle">Submit your idea and register your squad.</p>
         </header>
 
         <!-- Form Card -->
         <div class="form-card glass-panel">
             <form id="sharkTankForm" novalidate>
+                <input type="hidden" id="eventName" value="Hackathon">
                 
                 <!-- Section 1: Team Leader -->
                 <section class="form-section active" id="section-1">
@@ -47,7 +46,6 @@
                             <label for="leaderName">Full Name</label>
                             <span class="focus-border"></span>
                         </div>
-                        
                         <div class="input-field">
                             <input type="email" id="leaderEmail" required placeholder=" ">
                             <label for="leaderEmail">Email Address</label>
@@ -61,10 +59,9 @@
                             <label for="leaderPhone">Phone Number</label>
                             <span class="focus-border"></span>
                         </div>
-                        
                         <div class="input-field">
-                            <input type="text" id="leaderOrg" required value="MGM College" readonly placeholder=" ">
-                            <label for="leaderOrg">College / Organization</label>
+                            <input type="text" id="leaderOrg" required placeholder=" ">
+                            <label for="leaderOrg">College / University</label>
                             <span class="focus-border"></span>
                         </div>
                     </div>
@@ -75,7 +72,7 @@
                     <div class="section-header">
                         <i data-lucide="users" class="section-icon"></i>
                         <h2>Team Details</h2>
-                        <p>Tell us about the people behind the idea</p>
+                        <p>Tell us about your squad</p>
                     </div>
                     
                     <div class="input-group">
@@ -84,11 +81,11 @@
                             <label for="teamName">Team Name</label>
                             <span class="focus-border"></span>
                         </div>
-                        
                         <div class="input-field select-wrapper">
                             <select id="teamSize" required>
                                 <option value="" disabled selected>Select Team Size</option>
                                 <option value="2">2 Members</option>
+                                <option value="3">3 Members</option>
                                 <option value="4">4 Members</option>
                             </select>
                             <i data-lucide="chevron-down" class="select-icon"></i>
@@ -99,22 +96,22 @@
 
                     <div class="input-field full-width">
                         <textarea id="memberNames" rows="3" required placeholder=" "></textarea>
-                        <label for="memberNames">Member Names (Comma separated)</label>
+                        <label for="memberNames">All Member Names (Comma separated)</label>
                         <span class="focus-border"></span>
                     </div>
                 </section>
 
-                <!-- Section 3: Startup / Idea Details -->
+                <!-- Section 3: Project Concept -->
                 <section class="form-section collapsed" id="section-3">
                     <div class="section-header">
-                        <i data-lucide="lightbulb" class="section-icon"></i>
-                        <h2>Startup / Idea Details</h2>
-                        <p>What are you building?</p>
+                        <i data-lucide="terminal" class="section-icon"></i>
+                        <h2>Project Concept</h2>
+                        <p>What are you planning to build?</p>
                     </div>
                     
                     <div class="input-field full-width">
                         <input type="text" id="startupName" required placeholder=" ">
-                        <label for="startupName">Startup / Idea Name</label>
+                        <label for="startupName">Project/App Title</label>
                         <span class="focus-border"></span>
                     </div>
 
@@ -125,60 +122,38 @@
                     </div>
 
                     <div class="input-field full-width">
-                        <textarea id="proposedSolution" rows="3" required placeholder=" "></textarea>
-                        <label for="proposedSolution">Proposed Solution</label>
+                        <input type="text" id="targetMarket" required placeholder=" ">
+                        <label for="targetMarket">Proposed Tech Stack (e.g., React, Node, Python, AWS)</label>
                         <span class="focus-border"></span>
                     </div>
-
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="targetMarket" required placeholder=" ">
-                            <label for="targetMarket">Target Market</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        
-                        <div class="input-field select-wrapper">
-                            <select id="estimatedBudget" required>
-                                <option value="" disabled selected>Select Budget Range</option>
-                                <option value="< $10k">Under $10k</option>
-                                <option value="$10k - $50k">$10k - $50k</option>
-                                <option value="$50k - $100k">$50k - $100k</option>
-                                <option value="$100k+">$100k+</option>
-                            </select>
-                            <i data-lucide="chevron-down" class="select-icon"></i>
-                            <label for="estimatedBudget" class="select-label">Estimated Budget</label>
-                            <span class="focus-border"></span>
-                        </div>
+                    
+                    <div class="input-field full-width">
+                        <input type="url" id="proposedSolution" placeholder=" ">
+                        <label for="proposedSolution">GitHub or Portfolio Link (Optional)</label>
+                        <span class="focus-border"></span>
                     </div>
                 </section>
 
-                <!-- Section 4: Document Uploads -->
+                <!-- Section 4: Document Upload (Idea Pitch) -->
                 <section class="form-section collapsed" id="section-4">
                     <div class="section-header">
-                        <i data-lucide="folder-up" class="section-icon"></i>
-                        <h2>Attachments</h2>
-                        <p>Upload your pitch deck and optional assets</p>
+                        <i data-lucide="file-code-2" class="section-icon"></i>
+                        <h2>Idea Document</h2>
+                        <p>Upload a 1-2 page PDF explaining your architecture/idea</p>
                     </div>
 
                     <div class="upload-area" id="pitchDeckUpload">
                         <input type="file" id="pitchDeck" accept=".pdf,.ppt,.pptx" required hidden>
                         <div class="upload-content">
                             <i data-lucide="cloud-upload" class="upload-icon"></i>
-                            <h3>Upload Pitch Deck</h3>
-                            <p>PDF or PPT (Max 20MB)</p>
+                            <h3>Upload Idea PDF</h3>
+                            <p>Max 20MB</p>
                             <span class="file-name"></span>
                         </div>
                     </div>
-
-                    <div class="upload-area optional" id="prototypeUpload">
-                        <input type="file" id="prototypeImages" accept="image/*" multiple hidden>
-                        <div class="upload-content">
-                            <i data-lucide="image" class="upload-icon"></i>
-                            <h3>Prototype Images <span class="badge-optional">Optional</span></h3>
-                            <p>JPEG, PNG (Max 5MB per image)</p>
-                            <span class="file-name"></span>
-                        </div>
-                    </div>
+                    
+                    <!-- We include a hidden prototype upload to prevent js errors if it was explicitly expected somewhere -->
+                    <input type="file" id="prototypeImages" hidden>
                 </section>
 
                 <!-- Section 5: Declaration -->
@@ -188,7 +163,7 @@
                         <span class="checkmark">
                             <i data-lucide="check" class="check-icon"></i>
                         </span>
-                        <span class="checkbox-text">I confirm that this idea is original and created by our team. I understand the rules of the Mangalam 2026 Hackathon Event.</span>
+                        <span class="checkbox-text">I confirm that all code will be written during the 24-hour hackathon, and my team will bring our own hardware/laptops.</span>
                     </label>
                 </section>
 
@@ -200,7 +175,7 @@
                     <p class="progress-text"><span id="completedSections">1</span>/5 Sections Completed</p>
                     
                     <button type="submit" class="submit-btn disabled" id="submitBtn">
-                        <span class="btn-text">Submit Pitch</span>
+                        <span class="btn-text">Submit Registration</span>
                         <i data-lucide="rocket" class="btn-icon"></i>
                         <div class="btn-glow"></div>
                     </button>
@@ -213,8 +188,8 @@
                 <div class="success-icon-container">
                     <i data-lucide="check-circle" class="success-icon-large"></i>
                 </div>
-                <h2>Pitch Submitted!</h2>
-                <p>Welcome to the Tank. We will review your application and get back to you soon.</p>
+                <h2>Registration Submitted!</h2>
+                <p>Welcome to the Hackathon. We will review your idea and notify you if your team is shortlisted for the 24-hour event!</p>
                 <button class="outline-btn" onclick="window.location.reload()">Submit Another</button>
             </div>
             
