@@ -1,4 +1,11 @@
 /* Main Home Layout Overrides */
+body {
+    flex-direction: column;
+    align-items: center;
+    padding: 0; /* Remove padding so hero goes full bleed */
+    width: 100%;
+}
+
 .pt-0 { padding-top: 0 !important; }
 .mt-4 { margin-top: 4rem; }
 .text-massive { font-size: 4.5rem; line-height: 1.1; margin-bottom: 0.5rem; }

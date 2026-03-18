@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Google Apps Script Web App URL
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkJFrdmeBNfUPKlavwAopmdIDQgRAiC36mpNLRfQ57dEPdZ6GKJdSrPrss18jod_L2/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZL75PSpNf6l99awr31QN9ed-lsLXRT0u2yeBXQBPUev-1BQD8B9nfVTHlMa6t4Wbv/exec';
 
     // File to Base64 helper
     const getBase64 = (file) => new Promise((resolve, reject) => {
@@ -231,10 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Robust payload generator for completely dynamic forms
                 const payload = {};
-                
+
                 // Always grab eventName explicitly
                 payload.eventName = document.getElementById('eventName') ? document.getElementById('eventName').value : "General Registrations";
-                
+
                 // Automatically scoop up every input field by its HTML ID
                 inputs.forEach(input => {
                     if (input.type !== 'file' && input.type !== 'checkbox' && input.id && input.id !== 'eventName') {
