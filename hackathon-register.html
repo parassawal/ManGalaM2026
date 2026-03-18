@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangalam 2026 - Hackathon Registration</title>
-    <meta name="description" content="Register your team for the 24-Hour Hackathon.">
+    <title>Mangalam 2026 - BOLT 2.0 Registration</title>
+    <meta name="description" content="Register your team for BOLT 2.0, the ultimate hackathon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .conditional-field {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+        .conditional-field.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="background-animation">
@@ -23,8 +32,8 @@
         <!-- Header -->
         <header class="form-header">
             <div class="badge">Mangalam 2026</div>
-            <h1 class="glitch-text" data-text="Hackathon">Hackathon</h1>
-            <p class="subtitle">Submit your idea and register your squad.</p>
+            <h1 class="glitch-text" data-text="BOLT 2.0">BOLT 2.0</h1>
+            <p class="subtitle">The Ultimate Hackathon Registration Form.</p>
         </header>
 
         <!-- Form Card -->
@@ -32,61 +41,27 @@
             <form id="sharkTankForm" novalidate>
                 <input type="hidden" id="eventName" value="Hackathon">
                 
-                <!-- Section 1: Team Leader -->
+                <!-- Section 1: Team & Project Selection -->
                 <section class="form-section active" id="section-1">
                     <div class="section-header">
-                        <i data-lucide="user-circle" class="section-icon"></i>
-                        <h2>Team Leader Details</h2>
-                        <p>Primary contact for all communications</p>
+                        <i data-lucide="zap" class="section-icon"></i>
+                        <h2>Project & Team Scope</h2>
+                        <p>Select your problem statement and set your team size</p>
                     </div>
                     
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="leaderName" required placeholder=" ">
-                            <label for="leaderName">Full Name</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        <div class="input-field">
-                            <input type="email" id="leaderEmail" required placeholder=" ">
-                            <label for="leaderEmail">Email Address</label>
-                            <span class="focus-border"></span>
-                        </div>
+                    <div class="input-field full-width">
+                        <input type="text" id="teamName" required placeholder=" ">
+                        <label for="teamName">Team Name</label>
+                        <span class="focus-border"></span>
                     </div>
-                    
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="tel" id="leaderPhone" required placeholder=" ">
-                            <label for="leaderPhone">Phone Number</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        <div class="input-field">
-                            <input type="text" id="leaderOrg" required placeholder=" ">
-                            <label for="leaderOrg">College / University</label>
-                            <span class="focus-border"></span>
-                        </div>
-                    </div>
-                </section>
 
-                <!-- Section 2: Team Details -->
-                <section class="form-section collapsed" id="section-2">
-                    <div class="section-header">
-                        <i data-lucide="users" class="section-icon"></i>
-                        <h2>Team Details</h2>
-                        <p>Tell us about your squad</p>
-                    </div>
-                    
                     <div class="input-group">
-                        <div class="input-field">
-                            <input type="text" id="teamName" required placeholder=" ">
-                            <label for="teamName">Team Name</label>
-                            <span class="focus-border"></span>
-                        </div>
                         <div class="input-field select-wrapper">
                             <select id="teamSize" required>
                                 <option value="" disabled selected>Select Team Size</option>
                                 <option value="2">2 Members</option>
                                 <option value="3">3 Members</option>
-                                <option value="4">4 Members</option>
+                                <option value="4">4 Members (Max)</option>
                             </select>
                             <i data-lucide="chevron-down" class="select-icon"></i>
                             <label for="teamSize" class="select-label">Number of Members</label>
@@ -94,76 +69,123 @@
                         </div>
                     </div>
 
-                    <div class="input-field full-width">
-                        <textarea id="memberNames" rows="3" required placeholder=" "></textarea>
-                        <label for="memberNames">All Member Names (Comma separated)</label>
+                    <div class="input-field select-wrapper full-width">
+                        <select id="problemStatement" required style="padding-top: 1.5rem; height: auto; min-height: 3.5rem;">
+                            <option value="" disabled selected>Which problem are you solving?</option>
+                            <option value="Smart Rural Education Platform">Smart Rural Education Platform</option>
+                            <option value="Disaster Management System">Disaster Management System</option>
+                            <option value="Smart Parking System">Smart Parking System</option>
+                            <option value="Queue Management System">Queue Management System</option>
+                            <option value="Blockchain Fake Profile Detection">Blockchain Fake Profile Detection</option>
+                            <option value="AI Health Symptom Checker">AI Health Symptom Checker</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="select-icon"></i>
+                        <label for="problemStatement" class="select-label">Problem Statement Selection</label>
                         <span class="focus-border"></span>
                     </div>
                 </section>
 
-                <!-- Section 3: Project Concept -->
-                <section class="form-section collapsed" id="section-3">
+                <!-- Section 2: Leader & Member Details -->
+                <section class="form-section collapsed" id="section-2">
                     <div class="section-header">
-                        <i data-lucide="terminal" class="section-icon"></i>
-                        <h2>Project Concept</h2>
-                        <p>What are you planning to build?</p>
+                        <i data-lucide="users" class="section-icon"></i>
+                        <h2>Member Details</h2>
+                        <p>Contact information for your squad</p>
                     </div>
                     
-                    <div class="input-field full-width">
-                        <input type="text" id="startupName" required placeholder=" ">
-                        <label for="startupName">Project/App Title</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <textarea id="problemStatement" rows="3" required placeholder=" "></textarea>
-                        <label for="problemStatement">Problem Statement</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <div class="input-field full-width">
-                        <input type="text" id="targetMarket" required placeholder=" ">
-                        <label for="targetMarket">Proposed Tech Stack (e.g., React, Node, Python, AWS)</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    
-                    <div class="input-field full-width">
-                        <input type="url" id="proposedSolution" placeholder=" ">
-                        <label for="proposedSolution">GitHub or Portfolio Link (Optional)</label>
-                        <span class="focus-border"></span>
-                    </div>
-                </section>
-
-                <!-- Section 4: Document Upload (Idea Pitch) -->
-                <section class="form-section collapsed" id="section-4">
-                    <div class="section-header">
-                        <i data-lucide="file-code-2" class="section-icon"></i>
-                        <h2>Idea Document</h2>
-                        <p>Upload a 1-2 page PDF explaining your architecture/idea</p>
-                    </div>
-
-                    <div class="upload-area" id="pitchDeckUpload">
-                        <input type="file" id="pitchDeck" accept=".pdf,.ppt,.pptx" required hidden>
-                        <div class="upload-content">
-                            <i data-lucide="cloud-upload" class="upload-icon"></i>
-                            <h3>Upload Idea PDF</h3>
-                            <p>Max 20MB</p>
-                            <span class="file-name"></span>
+                    <!-- Team Leader -->
+                    <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; margin-top: 0.5rem;">Team Leader</h3>
+                    <div class="input-group">
+                        <div class="input-field full-width" style="grid-column: span 2;">
+                            <input type="text" id="leaderName" required placeholder=" ">
+                            <label for="leaderName">Leader Full Name</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="tel" id="leaderPhone" required placeholder=" ">
+                            <label for="leaderPhone">Leader Mobile Number</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="leaderEmail" required placeholder=" ">
+                            <label for="leaderEmail">Leader Email Address</label>
+                            <span class="focus-border"></span>
                         </div>
                     </div>
-                    
-                    <!-- We include a hidden prototype upload to prevent js errors if it was explicitly expected somewhere -->
-                    <input type="file" id="prototypeImages" hidden>
+
+                    <!-- Member 2 -->
+                    <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1.5rem;">Member 2</h3>
+                    <div class="input-group">
+                        <div class="input-field full-width" style="grid-column: span 2;">
+                            <input type="text" id="member2Name" required placeholder=" ">
+                            <label for="member2Name">Member 2 Name</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="tel" id="member2Phone" required placeholder=" ">
+                            <label for="member2Phone">Member 2 Mobile Number</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="member2Email" required placeholder=" ">
+                            <label for="member2Email">Member 2 Email Address</label>
+                            <span class="focus-border"></span>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 (Conditional) -->
+                    <div id="member3Block" class="conditional-field">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1.5rem;">Member 3</h3>
+                        <div class="input-group">
+                            <div class="input-field full-width" style="grid-column: span 2;">
+                                <input type="text" id="member3Name" placeholder=" ">
+                                <label for="member3Name">Member 3 Name</label>
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="tel" id="member3Phone" placeholder=" ">
+                                <label for="member3Phone">Member 3 Mobile Number</label>
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" id="member3Email" placeholder=" ">
+                                <label for="member3Email">Member 3 Email Address</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 (Conditional) -->
+                    <div id="member4Block" class="conditional-field">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1.5rem;">Member 4</h3>
+                        <div class="input-group">
+                            <div class="input-field full-width" style="grid-column: span 2;">
+                                <input type="text" id="member4Name" placeholder=" ">
+                                <label for="member4Name">Member 4 Name</label>
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="tel" id="member4Phone" placeholder=" ">
+                                <label for="member4Phone">Member 4 Mobile Number</label>
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" id="member4Email" placeholder=" ">
+                                <label for="member4Email">Member 4 Email Address</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <!-- Section 5: Declaration -->
-                <section class="form-section declaration-section collapsed" id="section-5">
+                <!-- Section 3: Declaration -->
+                <section class="form-section declaration-section collapsed" id="section-3">
                     <label class="custom-checkbox">
                         <input type="checkbox" id="declaration" required>
                         <span class="checkmark">
                             <i data-lucide="check" class="check-icon"></i>
                         </span>
-                        <span class="checkbox-text">I confirm that all code will be written during the 24-hour hackathon, and my team will bring our own hardware/laptops.</span>
+                        <span class="checkbox-text">I confirm that we will build minimum 60% of the project by March 22nd. If shortlisted, all team members will be present for the Offline Round 2.</span>
                     </label>
                 </section>
 
@@ -172,14 +194,18 @@
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="formProgress"></div>
                     </div>
-                    <p class="progress-text"><span id="completedSections">1</span>/5 Sections Completed</p>
+                    <p class="progress-text"><span id="completedSections">1</span>/3 Sections Completed</p>
                     
                     <button type="submit" class="submit-btn disabled" id="submitBtn">
-                        <span class="btn-text">Submit Registration</span>
-                        <i data-lucide="rocket" class="btn-icon"></i>
+                        <span class="btn-text">Register for BOLT 2.0</span>
+                        <i data-lucide="zap" class="btn-icon"></i>
                         <div class="btn-glow"></div>
                     </button>
                 </div>
+
+                <!-- Safe uploads bypass -->
+                <input type="file" id="pitchDeck" hidden>
+                <input type="file" id="prototypeImages" hidden>
 
             </form>
             
@@ -188,13 +214,61 @@
                 <div class="success-icon-container">
                     <i data-lucide="check-circle" class="success-icon-large"></i>
                 </div>
-                <h2>Registration Submitted!</h2>
-                <p>Welcome to the Hackathon. We will review your idea and notify you if your team is shortlisted for the 24-hour event!</p>
-                <button class="outline-btn" onclick="window.location.reload()">Submit Another</button>
+                <h2>Registration Set!</h2>
+                <p>You have registered for BOLT 2.0. Good luck working on your 60% project milestone!</p>
+                <button class="outline-btn" onclick="window.location.reload()">Register Another Team</button>
             </div>
             
         </div>
     </div>
+
+    <!-- Conditional Field Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamSizeSelect = document.getElementById('teamSize');
+            const member3Block = document.getElementById('member3Block');
+            const member4Block = document.getElementById('member4Block');
+
+            teamSizeSelect.addEventListener('change', (e) => {
+                const size = parseInt(e.target.value);
+                
+                // Hide and unrequire both initially
+                member3Block.classList.remove('visible');
+                document.getElementById('member3Name').required = false;
+                document.getElementById('member3Phone').required = false;
+                document.getElementById('member3Email').required = false;
+
+                member4Block.classList.remove('visible');
+                document.getElementById('member4Name').required = false;
+                document.getElementById('member4Phone').required = false;
+                document.getElementById('member4Email').required = false;
+
+                // Show Member 3 if size >= 3
+                if (size >= 3) {
+                    member3Block.classList.add('visible');
+                    document.getElementById('member3Name').required = true;
+                    document.getElementById('member3Phone').required = true;
+                    document.getElementById('member3Email').required = true;
+                }
+
+                // Show Member 4 if size === 4
+                if (size === 4) {
+                    member4Block.classList.add('visible');
+                    document.getElementById('member4Name').required = true;
+                    document.getElementById('member4Phone').required = true;
+                    document.getElementById('member4Email').required = true;
+                }
+                
+                // Re-trigger validation on the current section
+                const activeSection = document.querySelector('.form-section.active');
+                if(activeSection) {
+                    // This relies on script.js doing global validation loop, but we can manually force a check if we dispatch an event
+                    const event = new Event('input', { bubbles: true });
+                    teamSizeSelect.dispatchEvent(event);
+                }
+            });
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
